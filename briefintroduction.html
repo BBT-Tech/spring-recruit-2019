@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>百步梯春季招新</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/bintro1.css">
+    <!-- <meta name="viewport" content="user-scalable=no"> -->
+</head>
+
+<body>
+    <!-- <h1>百步梯</h1> -->
+    <div id="imgbox"><img src="source/png/bbt.png"></div>
+    <div id="text">
+        <p>华南理工大学百步梯学生创新中心（以下简称百步梯），是在校团委指导下、以互联网和学生广播电台为主要工作平台的校级学生组织，百步梯致力于为华工师生提供各类生活资讯、新闻广播以及包括主页空间、网上视频、FTP资源共享等在内的网络服务，同时以不同形式全力支持华工同学的创新活动。如今百步梯已经发展成华南地区最大的学生综合门户网站和一个优秀的校级学生组织。</p>
+    </div>
+    <div id="allbutton">
+        <div class="buttonbox"><button onclick="turnenroll()">马上报名</button></div>
+        <div class="buttonbox"><button onclick="turnintro()" class="diff">部门介绍</button></div>
+        <div class="buttonbox">
+            <!-- <div id="rabbit"><img src="source/png/3-兔子.png"></div> -->
+            <button onclick="turncheck()" class="diff">报名查询</button></div>
+    </div>
+</body>
+<script>
+    function turnenroll() {
+        window.location.href = "enroll.html";
+    }
+    function turnintro() {
+        window.location.href = "apart.html";
+    }
+    function turncheck() {
+        window.location.href = "check.html";
+    }
+</script>
+
+</html>

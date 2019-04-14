@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>百步梯报名表</title>
+    <!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/enroll.css">
+    <!-- <script src="vconsole.min.js"></script>
+    <script>
+        var vConsole = new VConsole();
+    </script> -->
+</head>
+
+<body>
+    <div id="centerer">
+        <div id="alertWindow">
+            <div id="greenframe">
+            <img id="Ticon" src="source/png/T.png">
+            <div id="alertMsg">
+                <h2 id="alertTitle">招新须知</h2>
+                <div id="alertContent">
+                    <li>南校所有学院均可报名部门：<br><div class="dpts">节目、技术、策推</div></li><br>
+                    <li>大一南校，大二北校可报名部门：<br><div class="dpts">节目、行政、人力、视设、新闻、频道、市场、策推、技术</div></li><br>
+                    <li>现在在北校可以报名部门：<br><div class="dpts">北校所有部门</div></li><br>
+                </div>
+                <button id="alertButton">知道了</button>
+            </div>            
+            </div>
+        </div>  
+    </div>
+
+    <img src="source/png/info.png" id="infobtn">
+
+    <div id="infobox" style="display: none;">
+
+    <p id="title">百步梯春招报名表</p>
+    <div id="info"></div>
+    <div class="infobox">
+        <div class="infoname">
+            <p>姓名</p>
+        </div>
+        <div class="info inputinfo"><input id="name" class="inputinfo1" placeholder="输入你的大名~" /></div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>性别</p>
+        </div>
+        <div class="info chooseone">
+            <div class="choose1"><label for="man"><input class="radio" type="radio" value="0" name="man" id="man"
+                        checked /><span></span> 男</label></div>
+            <div class="choose2"><label for="man2"><input class="radio" type="radio" value="1" name="man"
+                        id="man2" /><span></span> 女</label></div>
+        </div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>年级</p>
+        </div>
+        <div class="info chooseone">
+            <div class="choose1"><label for="grade1"><input class="radio" type="radio" value="0" name="grade"
+                        id="grade1" checked /><span></span> 大一</label></div>
+            <div class="choose2"><label for="grade2"><input class="radio" type="radio" value="1" name="grade"
+                        id="grade2" /><span></span> 大二</label></div>
+        </div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>专业类型</p>
+        </div>
+        <div class="info selbox">
+            <select name="type" id="typeoption">
+                <option value="0" class="firstchoose">请选择</option>
+                <option value="1">南校专业</option>
+                <option value="2">大一南校大二北校专业</option>
+                <option value="3">北校专业</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="limit" style="display: none;">
+    <div class="infobox">
+        <div class="infoname">
+            <p>学院</p>
+        </div>
+        <div class="info selbox">
+            <select name="college" id="collegeoption">
+                <option value="0" class="firstchoose">请选择</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>宿舍</p>
+        </div>
+        <div class="info inputinfo"><input id="dorm" class="inputinfo1" placeholder="如：C1-101" /></div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>手机</p>
+        </div>
+        <div class="info inputinfo"><input id="phonenum" class="inputinfo1" maxlength="11" placeholder="输入11位手机号码" /></div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>第一志愿</p>
+        </div>
+        <div class="info selbox">
+            <select id="firstdepartment" name="first" class="">
+                <option value="0" class="firstchoose">请选择</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>第二志愿</p>
+        </div>
+        <div class="info selbox">
+            <select name="second" id="seconddepartment">
+                <option value="0">选填</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="infobox">
+        <div class="infoname">
+            <p>服从调剂</p>
+        </div>
+        <div class="info chooseone">
+            <div class="choose1"><label for="yes"><input class="radio" type="radio" value="0" name="choice"
+                        id="yes" checked /><span></span> 是</label></div>
+            <div class="choose2"><label for="no"><input class="radio" type="radio" value="1" name="choice"
+                        id="no" /><span></span> 否</label></div>
+        </div>
+    </div>
+
+
+    <div>
+        <p id="other">个人简介（选填）</p>
+    </div>
+    <div id="textbox">
+        <textarea name="" id="text" cols="15" rows="6" placeholder="介绍一下你自己吧~限五十字哦：）"></textarea>
+    </div>
+    </div>
+    <div>
+        <p class="btnbox"><button id="submit" onclick=submit()>提交</button></p>
+        <p class="btnbox"><button class="diff" onclick="returnback()">返回</button></p>
+    </div>
+    </div>
+    <script src="js/enroll.js" defer="ture"></script>
+    <script type="text/javascript">
+        /*alert("招新须知：\n1、南校所有学院均可报名的部门：节目、技术、策推\n2、大一在南校，大二在北校可报名的部门：节目、行政、人力、视设、新闻、频道、市场、策推\n3、现在在北校可以报名的部门：北校所有部门");*/
+    </script>
+</body>
+
+</html>

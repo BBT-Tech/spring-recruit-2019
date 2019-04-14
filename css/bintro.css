@@ -1,0 +1,125 @@
+html
+{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+body
+{
+    margin: 0;
+    /* height: 100%; */
+    background: url("../source/png/bg.png") fixed;
+    background-size: cover;
+    /* background-size: 100%; */
+    /* background-position: top; */
+    background-position-y: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+.imgbox
+{
+    /* width: 100%; */
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 30px;
+}
+p
+{
+    font-family: "SimHei";
+    font-weight: 600;
+    font-size: 15px;
+    color: #333333;
+    line-height: 24px;
+    margin-top: 0;
+    height: auto;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    margin-bottom: 0;
+}
+#allbutton
+{
+    margin-top: 20px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-bottom: 20px;
+}
+.department
+{
+    width: 90%;
+    height: auto;
+}
+button
+{
+    font-family: "SimHei";
+    margin-top: 20px;
+    width: 120px;
+    height: 43px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: rgb(128,211,185);
+    border: 0;
+    box-shadow: 0px 1.5px 3px grey;
+    /* border: solid rgb(7, 108, 60) 2px; */
+    color: rgb(255,255,255);
+    margin-left: auto;
+    margin-right: auto;
+}
+.diff
+{
+    background-color: rgb(255,255,255);
+    color: rgb(128,211, 185);
+}
+.turn
+{
+    width: 100%;
+    position: absolute;
+    top: 280px;
+}
+.swiper-slide
+{
+    height: 100%;
+    /* overflow-y: auto; */
+}
+.swiper-container
+{
+    height: 350px;
+}
+.swiper-button-prev
+{
+    background: url("../source/png/turnleft.png");
+    background-size: 100%;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+.swiper-button-next
+{
+    background: url("../source/png/turnright.png");
+    background-size: 100%;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+.text
+{
+    overflow-y: auto;
+    height: 195px;
+}
+#timei
+{
+    /* position: sticky; */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 35%;
+    height: auto;
+}

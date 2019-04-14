@@ -1,0 +1,375 @@
+@keyframes alertShowAni{
+    0% {opacity: 0; transform:translateX(100%)  translateY(-50%)/*scale(0,0)*/; display: block;}
+    100% {opacity: 1; transform:translateX(0%)  translateY(-50%)/*scale(1,1)*/;}
+}
+@keyframes alertHideAni{
+    0% {opacity: 1; transform:translateX(0%)  translateY(-50%)/*scale(1,1)*/;}
+    100% {opacity: 0; transform:translateX(-100%)  translateY(-50%)/*scale(0,0)*/; display: none;}
+}
+@keyframes contentShowAni{
+    0% {/*opacity: 0;*/ transform:translateY(100%) /*scale(0,0)*/; display: block;}
+    100% {/*opacity: 1;*/ transform:translateY(0%) /*scale(1,1)*/;}
+}
+@keyframes contentHideAni{
+    0% {/*opacity: 1;*/ transform:translateY(0%) /*scale(1,1)*/;}
+    100% {/*opacity: 0;*/ transform:translateY(100%) /*scale(0,0)*/; display: none;}
+}
+html
+{
+    margin: 0;
+    height: 100%;
+    /* width: 100%; */
+    overflow-x: hidden;
+    padding: 0;
+}
+body
+{
+    background: url("../source/png/bg.png");
+    /* margin: 0; */
+    /* background-attachment: fixed; */
+    /* background-size: cover; */
+    /* width: 100%; */
+    /* overflow:auto; */
+    overflow-x: hidden;
+    /* background-position: top; */
+    background-position-y: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* height: 100%; */
+}
+#centerer {
+    z-index: 10;
+    display: none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    /*pointer-events:none;*/
+    /*justify-content: center;*/
+    background-color:rgba(0,0,0,0.25);
+}
+    #alertWindow {
+        position: relative;
+        z-index: 25;
+        width: 80%;
+        top:50%;
+        height: auto;
+        font-size: 16px;
+        text-align: center;
+        padding: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        transform:translateX(100%) translateY(-50%);
+        border-radius: 8px;
+        background-color: white;
+        opacity: 0; 
+    }
+        #greenframe{
+            border-width: 1.5px;
+            border-style: solid;
+            border-radius: 8px;
+            border-color: rgb(128,211,185);
+        }
+        #Ticon {
+            position: absolute;
+            left: 24px;
+            top: 20px;
+            height: 36px;
+        }
+        #alertMsg {
+            padding-top: 6px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-bottom: : 10px;
+            /*
+            position: absolute;
+            top: 2.6%;
+            width: 86%;
+            left: 7%;*/
+            color: #555555;
+        }
+            #alertTitle{
+                margin-top: 10px;
+            }
+            #alertContent{
+                /*position: absolute;*/
+                width:100%;
+                text-align: left;
+            }
+            .dpts {
+                margin-left: 24px;
+            }
+        #alertButton{
+            /*position: absolute;
+            left: 25%;
+            bottom: 10%;
+            width: 50%;
+            */
+            margin-top: 8px;
+            margin-bottom: 24px;
+            
+            user-select:none;
+        }
+/*
+@media screen and (min-width: 370px){
+    #alertWindow{font-size: 17px;}
+}
+
+@media screen and (min-width: 380px){
+    #alertWindow{font-size: 18px;}
+}
+@media screen and (min-width: 400px){
+    #alertWindow{font-size: 19px;}
+}
+
+@media screen and (min-width: 420px){
+    #alertMsg {top:3%;}
+    #alertWindow{font-size: 20px;}
+}
+@media screen and (min-width: 440px){
+    #alertMsg {top:4%;}
+    #alertWindow{font-size: 21px;}
+    #alertButton{margin-top: 16px;}
+}
+@media screen and (min-width: 456px){
+    #alertMsg {top:3.5%;}
+    #alertWindow{font-size: 22px;}
+    #alertButton{margin-top: 0px;}
+}
+@media screen and (min-width: 464px){
+    #alertMsg {top:5%;}
+    #alertWindow{font-size: 22px;}
+    #alertButton{margin-top: 12px;}
+}*/
+
+#infobtn{
+    position: absolute;
+    right: 8px; top: 8px;
+    width: 38px;
+}
+
+#title
+{
+    font-weight: 600;
+    font-family: "SimHei";
+    font-size: 24px;
+    margin-top: 80px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    text-align: center;
+}
+p
+{
+    margin-top: 0;
+    font-weight: 600;
+    font-family: "SimHei";
+    margin-bottom: 40px;
+    color: rgb(51,51,51);
+    width: 100%;
+}
+.infobox
+{
+    display: flex;
+    width:100%;
+}
+.infoname
+{
+    padding-top: 1px;
+    margin-left: 7%;
+    font-size: 20px;
+    width: 27%;
+}
+.info
+{
+    font-family: "SimHei";
+    margin-left: 5%;
+    font-size: 17px;
+    width: 61%;
+}
+.chooseone
+{
+    display: flex;
+    margin-bottom: 40px;
+    width: 55%;
+}
+select
+{
+    font-family: "SimHei";
+    font-weight: 600;
+    font-size: 16px;
+    /* width: 85%; */
+    width: 190px;
+    height: 27px;
+    margin-bottom: 40px;
+    margin-top: 0;
+    padding-left: 8px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    border:1px solid rgb(69,94,222);
+    border-radius: 5px;
+    /*去掉默认的下拉三角*/
+    appearance:none;  
+    -moz-appearance:none;  
+    -webkit-appearance:none;
+    /*添加下拉三角图标*/
+    background: url("../source/png/selectbg2.0.png") no-repeat right center transparent;
+    background-size: 100% 100%;
+}
+.inputinfo
+{
+    font-family: "SimHei";
+    font-size: 16px;
+    /* width: 85%; */
+    width: 180px;
+    height: 23px;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+.inputinfo1
+{
+    font-family: "SimHei";
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid rgb(69,94,222);
+    border-radius: 5px;
+    height: 100%;
+    padding-left: 8px;
+    font-size: 16px;
+}
+label
+{
+    font-family: "SimHei";
+    font-weight: 600;
+    color: rgb(51,51,51);
+    font-size: 20px;
+    margin-top: 0;
+}
+.choose1
+{
+    width: 50%;
+}
+.choose2
+{
+    width: 50%;
+}
+input[type=radio]
+{
+    width: 15px;
+    height: 15px;
+    /* margin-top: 5px; */
+}
+#other
+{
+    font-family: "SimHei";
+    font-weight: 600;
+    color: rgb(51,51,51);
+    margin-left: 7%;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+#text
+{
+    font-family: "SimHei";
+    color: rgb(51,51,51);
+    font-weight: 600;
+    width: 100%;
+    font-size: 18px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: dashed 2px rgb(69,94,222);
+    padding-top: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+#textbox
+{
+    margin-left: 7%;
+    margin-right: 15%;
+    width: 80%;
+    /* padding: 0,5%,0,5%; */
+}
+button
+{
+    font-family: "SimHei";
+    width: 120px;
+    height: 43px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: rgb(128,211,185);
+    border: 0;
+    box-shadow: 0px 1.5px 3px grey;
+    /* border: solid rgb(7, 108, 60) 2px; */
+    color: rgb(255,255,255);
+}
+.btnbox
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.diff
+{
+    /* border: solid rgb(65,183,81) 2px; */
+    background-color: rgb(255,255,255);
+    color: rgb(128,211,185);
+    margin-bottom: 80px;
+}
+
+
+/* radio样式更改 */
+.radio
+{
+    display: none;
+}
+.radio[type=radio]+span {
+	display: inline-block;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    background: rgb(255,255,255);
+}
+.radio[type=radio]:checked+span {
+	display: inline-block;
+	/* width: .28rem; */
+	/* height: .28rem; */
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    background: url("../source/png/tick1.png") no-repeat;
+    background-size: cover;
+    /* background-position-x: center; */
+}
+#second
+{
+    color: rgb(158,158,158);
+}
+
+/* placehorder样式修改 */
+input::-webkit-input-placeholder {
+	/* WebKit browsers*/
+	/* color: rgb(232,65,64); */
+	color: #9e9e9e;
+} 
+input:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	/* color: rgb(232,65,64); */
+	color: #9e9e9e;
+} 
+input::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	/* color: rgb(232,65,64); */
+	color: #9e9e9e;
+}
+input:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	/* color: rgb(232,65,64); */
+	color: #9e9e9e;
+}

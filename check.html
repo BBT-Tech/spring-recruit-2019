@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+         minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/baibuti.css" />
+    <title>百步梯春招查询</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script>
+        console.log('ok');
+    window.onload = function() {
+        document.getElementsByTagName("body")[0].style.height = window.innerHeight+'px';
+        console.log('ok');
+        console.info('xxx');
+    }
+    </script> -->
+    <script src="js/baibuti.js"></script>
+</head>
+
+<body>
+    <div id="titleOfCheck">输入名字和手机查询报名信息</div>
+    <div name="inputName" class="rowOfCheck">
+        <div class="leftOfCheck">姓名</div>
+        <input type="text" id="name" class="rightOfCheck" placeholder="输入你的大名~" autocomplete="off" spellcheck="false"
+            required>
+    </div>
+    <div name="inputPhone" class="rowOfCheck">
+        <div class="leftOfCheck">手机</div>
+        <input type="text" id="phone" class="rightOfCheck" placeholder="输入11位手机号码" maxlength="11" autocomplete="off" spellcheck="false"
+            required>
+    </div>
+    <button type="button" class="buttonUpOfCheck" onclick="check()">查询</button>
+    <button type="button" class="buttonDownOfCheck" onclick="returnback()">返回</button>
+    <img id="timei" src="source/png/timei3.png">
+</body>
+<script>
+    // body();
+    //返回按钮
+    function returnback() {
+        window.location.href = "briefintroduction.html";
+    }
+    $(document).ready(function () { $('body').css({ 'height': $(window).height() }) });
+    // //js
+    // mounted(){
+    //     this.bodyHeight = document.documentElement.clientHeight;
+    // }
+</script>
+
+</html>

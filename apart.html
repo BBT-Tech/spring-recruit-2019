@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name=”viewport” content="width=240, height=320, user-scalable=yes, initial-scale=2.5, maximum-scale=5.0, minimun-scale=1.0"> -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>百步梯部门介绍</title>
+    <link rel="stylesheet" type="text/css" href="css/department.css">
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="move">
+        <img id="department0" src="source/png/department/tech.png" z-index="1" class="pic1 btn">
+        <img id="department1" src="source/png/department/design.png" z-index="1" class="pic2 btn">
+        <img id="department2" src="source/png/department/news.png" z-index="1" class="pic1 btn">
+        <img id="department3" src="source/png/department/editor.png" z-index="1" class="pic2 btn">
+        <img id="department4" src="source/png/department/manage.png" z-index="1" class="pic1 btn">
+        <img id="department5" src="source/png/department/plan.png" z-index="1" class="pic2 btn">
+        <img id="department6" src="source/png/department/video.png" z-index="1" class="pic1 btn">
+        <img id="department7" src="source/png/department/communicate.png" z-index="1" class="pic2 btn">
+        <img id="department8" src="source/png/department/manpower.png" z-index="1" class="pic1 btn">
+        <img id="department9" src="source/png/department/program.png" z-index="1" class="pic2 btn">
+        <!--img id="department10" src="source/png/department/product.png" z-index="1" class="pic1 btn"-->
+        <img id="department10" src="source/png/department/appearance.png" z-index="1" class="pic1 btn">
+        <img id="department11" src="source/png/department/market.png" z-index="1" class="pic2 btn">
+        <img id="department12" src="source/png/department/administration.png" z-index="1" class="pic1 btn">
+        <img id="department13" src="source/png/department/information.png" z-index="1" class="pic2 btn">
+    </div>
+    <img id="tizai" src="source/png/tizai.png">
+</body>
+<script>
+    $(function () {
+        $('.btn').click(function () {
+            var imgid1 = event.target.id;
+            var imgid = imgid1.substring(10, 12);
+            /* 存储名字为 localIndex , 值为 1 的变量 如下两种方法 */
+            localStorage.localIndex = imgid;
+            // localStorage.setItem("localIndex","1"); // 注意这里的index类型是string 所以不能直接加法运算,稍后处理时候要转为number类型
+            // console.log(imgid);
+            window.location.href = "content.html";
+        });
+    })
+</script>
+
+
+</html>

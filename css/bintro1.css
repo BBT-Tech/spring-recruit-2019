@@ -1,0 +1,77 @@
+html
+{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+body
+{
+    margin: 0;
+    /* height: 100%; */
+    background: url("../source/png/bg.png") fixed;
+    background-size: cover;
+    /* background-size: 100%; */
+    /* background-position: top; */
+    background-position-y: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+}
+#imgbox
+{
+    width: 100%;
+    text-align: center;
+    margin-top: 20%;
+}
+img
+{
+    width: 33%;
+    height: auto;
+}
+p
+{
+    font-family: "SimHei";
+    font-weight: 600;
+    font-size: 15px;
+    color: #333333;
+    line-height: 24px;
+    /* margin-top: 20px; */
+    height: auto;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    margin-bottom: 5px;
+}
+#allbutton
+{
+    padding-bottom: 40px;
+}
+.buttonbox
+{
+    text-align: center;
+}
+button
+{
+    font-family: "SimHei";
+    margin-top: 20px;
+    width: 120px;
+    height: 43px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: rgb(128,211,185);
+    border: 0;
+    box-shadow: 0px 1.5px 3px grey;
+    /* border: solid rgb(7, 108, 60) 2px; */
+    /* border-radius: 10px; */
+    color: rgb(255,255,255);
+}
+.diff
+{
+    /* border: solid rgb(65,183,81) 2px; */
+    background-color: rgb(255,255,255);
+    color: rgb(128,211,185);
+}

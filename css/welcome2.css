@@ -1,0 +1,142 @@
+@keyframes treeAni{
+    0%   {transform:translateY(-100%) rotate(-40deg);}
+    100% {transform:translateY(-100%) rotate(0deg);}
+}
+@keyframes textAni{
+    0%   {opacity: 1;}
+    100% {opacity: 0.6;}
+}
+
+html
+{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+body
+{
+    background: url("../source/png/bg.png") fixed;
+    background-size: 100%;
+    /* height: 100%; */
+    /* padding: 0; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: top; */
+    background-position-y: bottom;
+    background-position-x: center;
+    width: auto;
+    overflow: hidden;
+    margin: 0;
+}
+#envelope{
+    transform: translateY(55%);
+    position: absolute;
+    width: 100%;
+    bottom: 40%;
+}
+/*
+@media screen and (min-width: 424px){
+    #envelope{bottom: -36px;}
+}
+@media screen and (min-width: 456px){
+    #envelope{bottom: -50px;}
+}
+*/
+#envelopebg{
+    width: 100%;
+}
+#startGame{
+    transform: translateY(-100%);
+    position: absolute;
+    top: -32px; left: 0;
+    width: 100%;
+
+    animation-name: textAni;
+    animation-duration: 0.7s;
+    animation-delay: 0;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+#tree{
+    transform: translateY(-100%);
+    position: absolute;
+    height: 32px;
+    top: 4px;
+    z-index: -1;
+    right: 5%;
+
+    transform-origin: 26.15% 93.40%;
+
+    animation-name: treeAni;
+    animation-duration: 0.7s;
+    animation-delay: 0;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+#request1
+{
+    /* margin-top: 50px; */
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    text-align: center;
+}
+button{
+    /* width: 125px; */
+    /* height: 45px; */
+    /* font-size: 20px; */
+    /* border-radius: 10px; */
+    /* font-weight: 500; */
+    font-family: "SimHei";
+    width: 120px;
+    height: 43px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: rgb(128,211,185);
+    box-shadow: 0px 1.5px 3px grey;
+    border: 0;
+    /* border: solid rgb(28,154,58); */
+    color: rgb(255,255,255);
+}
+#all
+{
+    margin-top: 40%;
+}
+p
+{
+    font-family: "SimHei";
+    font-weight: 600;
+    /* position: relative; */
+    /* top: 585px; */
+    /* width: 100%; */
+    margin-top: 0.6vh;
+    margin-bottom: 0.6vh;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 234px; */
+    width: 40vh;
+    font-size: 3.2vh;
+    padding-bottom: 0.8vh;
+    /*border-bottom: solid rgb(175,177,178) 1px;*/
+    color: rgb(7,108,60);
+    text-align: center;
+    /* padding-left: 3px; */
+    /* padding-right: 3px; */
+}
+#describe
+{
+    position: absolute;
+    top: 20%;
+    /* text-align: center; */
+    left: 10%;
+    width: 80%;
+}
