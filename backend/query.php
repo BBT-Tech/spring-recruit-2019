@@ -1,12 +1,13 @@
 <?php
 
+include "realconfig.php";
 session_start();
 
 header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
 
 //服务器
-$ini=parse_ini_file("login.ini");
+//$ini=parse_ini_file("login.ini");
 $con=mysqli_connect($ini["servername"],$ini["username"],$ini["password"],$ini["dbname"]);
 // $con=mysqli_connect("localhost","root","Continue.LJL666","baibuti");
 mysqli_query($con,"SET NAMES utf8mb4");

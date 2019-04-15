@@ -29,7 +29,9 @@ const modificationpath = 'backend/modification.php';
 
 var collegeData = [];
 var departmentData = [];
-var deptLimit = [[1,7,9,10,13],[0,1,2,3,5,7,8,9,10],[0,1,2,3,4,5,6,7,8]];
+var deptLimit = [[1,7,9,12,13,14,15,16,17],
+    [0,1,2,3,5,7,8,9,12,13,14],
+    [0,1,2,3,4,5,6,7,8]];
 var infoBox = document.getElementById('infobox');
 var centerer = document.getElementById('centerer');
 var alertMsg = document.getElementById('alertMsg');

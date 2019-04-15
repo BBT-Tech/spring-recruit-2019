@@ -1,5 +1,6 @@
 <?php
-$ini=parse_ini_file("login.ini");
+include "realconfig.php";
+//$ini=parse_ini_file("login.ini");
 
 header('Content-Type: application/json');
 

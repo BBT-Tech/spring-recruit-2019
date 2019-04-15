@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1
--- 生成日期： 2019-04-14 17:01:36
+-- 生成日期： 2019-04-15 17:28:00
 -- 服务器版本： 10.1.36-MariaDB
 -- PHP 版本： 7.2.11
 
@@ -111,11 +111,15 @@ INSERT INTO `department` (`department`, `id`) VALUES
 ('形象推广部', 6),
 ('技术部', 7),
 ('视觉设计部', 8),
-('节目部', 9),
-('策划推广部', 10),
-('综合管理部', 11),
-('外联部', 12),
-('编辑部', 13);
+('策划推广部', 9),
+('综合管理部', 10),
+('外联部', 11),
+('节目部-国语', 12),
+('节目部-粤语', 13),
+('节目部-英语', 14),
+('编辑部-原创写手组', 15),
+('编辑部-摄影组', 16),
+('编辑部-可视化设计组', 17);
 
 -- --------------------------------------------------------
 
@@ -174,13 +178,13 @@ ALTER TABLE `college`
 -- 使用表AUTO_INCREMENT `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- 使用表AUTO_INCREMENT `information`
 --
 ALTER TABLE `information`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
