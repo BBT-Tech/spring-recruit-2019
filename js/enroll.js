@@ -29,7 +29,7 @@ const modificationpath = 'backend/modification.php';
 
 var collegeData = [];
 var departmentData = [];
-var deptLimit = [[7,9,10],[0,1,2,3,5,7,8,9,10],[0,1,2,3,4,5,6,7,8]];
+var deptLimit = [[1,7,9,10,13],[0,1,2,3,5,7,8,9,10],[0,1,2,3,4,5,6,7,8]];
 var infoBox = document.getElementById('infobox');
 var centerer = document.getElementById('centerer');
 var alertMsg = document.getElementById('alertMsg');
@@ -179,9 +179,9 @@ function updateTypeOpt(){
     var value = typeopt.value;
     if(value==0) return hideLimitLayer();
     dormInput && (dormInput.placeholder = 
-        (value==3 ? "如：东1-123" : 
-        (value==1 ? "如：C1-101" : 
-        "如：C1-101 或 东1-123")));
+        (value==3 ? "如：东1-123" : "如：C1-101"));
+        //(value==1 ? "如：C1-101" : 
+        //"如：C1-101 或 东1-123")));
     var depts = deptLimit[value-1];
     updateDepts(depts);
     updateColls(value);
@@ -310,7 +310,7 @@ function getchoice(cname, choice1, choice2) {
     var selectvalue = null;   //  selectvalue为radio中选中的值
     for (var i = 0; i < radio.length; i++) 
         if (radio[i].checked == true) {
-            selectvalue = radio[i].value;
+            selectvalue = Number(radio[i].value);
             break;
         }
     // return selectvalue;

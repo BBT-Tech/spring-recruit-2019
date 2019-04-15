@@ -31,10 +31,10 @@ body
     margin: 0;
 }
 #envelope{
-    transform: translateY(55%);
+    transform: translateY(82%);
     position: absolute;
     width: 100%;
-    bottom: 40%;
+    bottom: 60%;
 }
 /*
 @media screen and (min-width: 424px){
