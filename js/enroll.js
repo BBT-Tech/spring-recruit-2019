@@ -103,8 +103,10 @@ function loadStopTime(func){
     sendHTTPReq('POST',getTimePath, {})
     .then(data=>{
         if (data&&!data.errcode) {
-            for(var i in data.data)
+            for(var i in data.data){
                 stopTimeData[i-1] = new Date(data.data[i]*1000); 
+                stopTimeData[i-1].setHours(0);
+            }
             createTypeOpts();
             func && func();
         } else alert(data.msg);
