@@ -21,17 +21,22 @@
 //         }
 //     }
 // }
+const getTimePath = 'backend/getStopTime.php';
 const showCollegepath = 'backend/showCollege.php';
 const showDepartmentpath = 'backend/showDepartment.php';
 //const showCollegepath = 'backend/showCollege.php';
 const applypath = 'backend/apply.php';
 const modificationpath = 'backend/modification.php';
 
+var stopTimeData = [];
+var typeData = [
+    "南校专业", "下学期搬去北校", "现在在北校"
+]
 var collegeData = [];
 var departmentData = [];
 var deptLimit = [[1,7,9,12,13,14,15,16,17],
     [0,1,2,3,5,7,8,9,12,13,14],
-    [0,1,2,3,4,5,6,7,8]];
+    [0,1,2,3,5,6,7,8]];
 var infoBox = document.getElementById('infobox');
 var centerer = document.getElementById('centerer');
 var alertMsg = document.getElementById('alertMsg');
@@ -94,12 +99,23 @@ function htmlDecode(str) {
 }
 // xhr(path1, "");
 dataLoaded = false;
+function loadStopTime(func){
+    sendHTTPReq('POST',getTimePath, {})
+    .then(data=>{
+        if (data&&!data.errcode) {
+            for(var i in data.data)
+                stopTimeData[i-1] = new Date(data.data[i]*1000); 
+            createTypeOpts();
+            func && func();
+        } else alert(data.msg);
+    })
+}
 function loadColleges(func){
     sendHTTPReq('POST',showCollegepath, {})
     .then(data=>{
         if (data&&!data.errcode) {
             collegeData=data.data; func && func();
-        } else alert("发生错误！错误信息："+data.errcode);
+        } else alert(data.msg);
     })
     //.catch(e=>alert("发生错误！错误信息："+e))
 }
@@ -109,13 +125,14 @@ function loadDepartments(func){
     .then(data=>{
         if (data&&!data.errcode) {
             departmentData=data.data; func && func();
-        } else alert("发生错误！错误信息："+data.errcode);
+        } else alert(data.msg);
     })
     //.catch(e=>alert("发生错误！错误信息："+e))
 }
 function loadData(func){
     if(dataLoaded) return; dataLoaded = true;
-    loadColleges(loadDepartments.bind(this,func));
+    loadStopTime(loadColleges.bind(this,
+        loadDepartments.bind(this,func)));
     /*
     sendHTTPReq('POST',showCollegepath, {})
     .then(data=>{
@@ -135,11 +152,23 @@ function loadData(func){
     })
     .catch(e=>alert("发生错误！错误信息："+e))*/
 }
-window.onload = loadData.bind(this,undefined);
+window.onload = loadData.bind(this,jumpTimeout);
+
+function checkDate(){
+    var now = new Date()
+    for(var i=0;i<typeData.length;i++)
+        if(now < stopTimeData[i]) return true;
+    return false;
+}
+function jumpTimeout(){
+    if(checkDate()) return showAlert();
+    window.location.href = "timeout.html";
+}
 
 if(alertButton){
-    showAlert();
+    infobtn.style.display = 'none';
     function showAlert() {   
+        infobtn.style.display = 'block';
         centerer.style.display = 'block';
         alertWindow.style.animationName = 'alertShowAni';
         alertWindow.style.animationDuration = '0.2s';
@@ -175,6 +204,18 @@ if(alertButton){
     }
     alertButton.onclick = hideAlert;
     infobtn.onclick = showAlert;
+}
+
+
+function createTypeOpts(){
+    clearTypes();
+    var now = new Date()
+    for(var i=0;i<typeData.length;i++){
+        if(now < stopTimeData[i]) 
+            typeopt.options.add(new Option(typeData[i], i+1));
+        else if(!alertButton)
+            typeopt.options.add(new Option(typeData[i], i+1));
+    }
 }
 
 function updateTypeOpt(){
@@ -221,6 +262,11 @@ function updateColls(type){
             collopt.options.add(new Option(
                 collegeData[i].college, 
                 Number(collegeData[i].id)+1))
+}
+function clearTypes(){
+    while(typeopt.options.length)
+        typeopt.options.remove(0);
+    typeopt.options.add(new Option("请选择", 0));
 }
 function clearDepts(){
     while(deptopt1.options.length)

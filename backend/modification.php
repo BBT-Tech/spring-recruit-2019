@@ -4,10 +4,26 @@ session_start();
 
 require "config.php";
 
+$now = time();
+
+$type=$_POST["type"];
+
+$stop = $ini[$type == "现在在北校" ? 'stoptime2' : 'stoptime1'];
+
+if(($now)>=($stop)){
+    $result = [
+        "errcode" => 8,
+        "msg" => "报名已截止！",
+        "data" => ""
+    ];
+
+    echo json_encode($result);
+    exit;
+}
+
 $name=$_POST["name"];
 $gender=$_POST["gender"];//男为"male"  女为"female"
 $grade=$_POST["grade"];//大一为"gradeOne"  大二为"gradeTwo"
-$type=$_POST["type"];
 $college=$_POST["college"];
 $dormitory=$_POST["dormitory"];
 $phone=$_POST["phone"];

@@ -239,6 +239,10 @@ function showAdjustGou() {
 }
 
 function edit() {
+    if(!checkDate()){
+        alert("报名已经完全截止了哦~")
+        return;
+    }
     location.href = "#";
     editName();
     editGender();
