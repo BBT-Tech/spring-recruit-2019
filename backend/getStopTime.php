@@ -1,6 +1,6 @@
 <?php
 
-require "config.php";
+require 'config.php';
 
 $time = [
 	'1'=>$ini['stoptime1'],
@@ -9,7 +9,7 @@ $time = [
 ];
 $result = [
     "errcode" => 0,
-    "msg" => "",
+    "msg" => '',
     "data" => $time
 ];
 
