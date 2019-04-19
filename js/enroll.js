@@ -105,7 +105,8 @@ function loadStopTime(func){
         if (data&&!data.errcode) {
             for(var i in data.data){
                 stopTimeData[i-1] = new Date(data.data[i]*1000); 
-                stopTimeData[i-1].setHours(0);
+                stopTimeData[i-1].setDay(stopTimeData[i-1].getDay()-1);
+                stopTimeData[i-1].setHours(20);
             }
             createTypeOpts();
             func && func();

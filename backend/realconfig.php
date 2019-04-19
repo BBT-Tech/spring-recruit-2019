@@ -1,9 +1,11 @@
 <?php 
-$ini = array(
+\$ini = array(
 	'servername' => 'localhost',
-	'username' => 'root',
+	'username' => '',
 	'password' => '',
-	'dbname' => 'bbt',
-	'stoptime1' => mktime(0,0,0,4,19,2019),
-	'stoptime2' => mktime(0,0,0,4,20,2019))
+	'dbname' => '',
+	'stoptime1' => strtotime('2019-04-19 00:00:00'),
+	'stoptime2' => strtotime('2019-04-19 20:00:00'),
+	'stoptime2_' => strtotime('2019-04-20 00:00:00')
+)
 ?>
